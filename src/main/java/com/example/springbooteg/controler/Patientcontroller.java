@@ -28,11 +28,17 @@ public class Patientcontroller {
 		System.out.println(dto);
 	}
 
-	@GetMapping("/fetchbyid")
+	@GetMapping("/")
 	public Patientdata fetchPatientById(@RequestParam int id) {
 		//int id=dto.getId();
 		return dao.fetchPatientById(id);
 	}
+	
+//	@GetMapping("/{id}")
+//	public Patientdata fetchPatientById(@PathVariable int id) {
+//		//int id=dto.getId();
+//		return dao.fetchPatientById(id);
+//	}
 	
 	@GetMapping
 	public List<Patientdata> fetchAll(){
@@ -46,6 +52,7 @@ public class Patientcontroller {
 	
 	@PutMapping
 	public String updatePatient(@RequestBody Patientdata dto) {
+		//happy 
 	return dao.updatePatient(dto);
 	}
 
